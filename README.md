@@ -3,32 +3,61 @@
 # Coder: 
 - Hector Carvajal
 ## Link repositorio : https://github.com/hecarde2/finalproyec1.git
-# Descripción
-Este programa de consola desarrollado en **Python** permite administrar un inventario básico mediante el registro de productos.  
-El usuario puede ingresar información como el **nombre**, **precio** y **cantidad** de cada producto desde un menú interactivo en la terminal.
 
-El objetivo del sistema es facilitar el control sencillo de productos y calcular automáticamente el costo total según los datos ingresados.
+# Descripción
+
+Este programa de consola desarrollado en **Python** permite gestionar un sistema de inventario mediante un menú interactivo en la terminal.
+
+El usuario puede registrar productos ingresando su **nombre, precio y cantidad**, además de administrar la información realizando búsquedas, actualizaciones y eliminaciones.
+
+El proyecto está organizado en diferentes archivos para separar la lógica del sistema, el manejo del menú y la gestión de archivos CSV.
+
 
 # Funcionamiento
-- Es un programa que se ejecuta en la **terminal o consola**.
-- Está desarrollado en **Python** y funciona mediante un intérprete (ejemplo: Python 3).
-- Utiliza un menú interactivo que guía al usuario paso a paso.
-- Permite registrar productos dentro de un inventario usando las siguientes variables:
 
-  - **nombre:** identifica el producto.
-  - **precio:** valor unitario del producto.
-  - **cantidad:** número de unidades disponibles.
+Es un programa de consola que se ejecuta desde la terminal.
 
-- El sistema calcula automáticamente el **costo total** del producto registrado.
+Funciona en **Python** utilizando un intérprete (por ejemplo: Python 3).
+
+El sistema muestra un menú principal donde el usuario selecciona opciones para administrar el inventario:
+
+- Agregar productos
+- Mostrar inventario
+- Buscar productos
+- Actualizar información
+- Eliminar productos
+- Ver estadísticas del inventario
+- Guardar datos en archivo CSV
+- Cargar inventario desde CSV
+- Salir del programa
+
+Permite registrar productos utilizando las siguientes variables:
+
+- **nombre:** nombre del producto.
+- **precio:** valor unitario del producto.
+- **cantidad:** número de unidades disponibles en el inventario.
+
+
+# Estructura del proyecto
+
+El sistema está dividido en varios archivos:
+
+- **app.py:** archivo principal que ejecuta el programa y controla el menú.
+- **servicios.py:** contiene las funciones del inventario.
+- **archivos.py:** permite guardar y cargar información en archivos CSV.
+
 
 # Requisitos
-- Tener instalado **Python 3** en el computador.
-- Contar con una terminal o consola (CMD, PowerShell, Linux Terminal o VS Code).
-- Tener descargados los archivos del proyecto.
+
+- Tener instalado **Python 3**
+- Contar con una terminal o consola para ejecutar el programa
+- Editor de código opcional (Visual Studio Code recomendado)
+
 
 # Cómo ejecutar el programa
-1. Descargar o clonar el repositorio del proyecto.
-2. Abrir la terminal dentro de la carpeta donde se encuentra el proyecto.
+
+1. Descargar o clonar el repositorio.
+2. Abrir la terminal en la carpeta del proyecto.
 3. Ejecutar el archivo principal con el siguiente comando:
 
 ```bash
