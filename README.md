@@ -3,24 +3,33 @@
 # Coder: 
 - Hector Carvajal
 ## Link repositorio : https://github.com/hecarde2/finalproyec1.git
-## Descripcion
-Este programa de consola en lenguaje "Python" permite registrar productos ingresando su "nombre, precio y cantidad."  
-El sistema funciona mediante un menú en la terminal donde el usuario puede gestionar los productos del inventario.
+# Descripción
+Este programa de consola desarrollado en **Python** permite administrar un inventario básico mediante el registro de productos.  
+El usuario puede ingresar información como el **nombre**, **precio** y **cantidad** de cada producto desde un menú interactivo en la terminal.
 
-## Funcionamiento
-- Es un programa de consola.
-- Funciona en "Python" a través de un intérprete (por ejemplo: Python 3).
-- Permite registrar productos con las siguientes variables:
-  - "nombre": nombre del producto.
-  - "precio": precio del producto.
-  - "cantidad": número de productos disponibles en el inventario.
+El objetivo del sistema es facilitar el control sencillo de productos y calcular automáticamente el costo total según los datos ingresados.
 
-  ## Requisitos
-- Tener "Python 3" instalado
-- Un intérprete o terminal para ejecutar el programa
+# Funcionamiento
+- Es un programa que se ejecuta en la **terminal o consola**.
+- Está desarrollado en **Python** y funciona mediante un intérprete (ejemplo: Python 3).
+- Utiliza un menú interactivo que guía al usuario paso a paso.
+- Permite registrar productos dentro de un inventario usando las siguientes variables:
 
-## Cómo ejecutar el programa
+  - **nombre:** identifica el producto.
+  - **precio:** valor unitario del producto.
+  - **cantidad:** número de unidades disponibles.
 
-1. Descargar o clonar el repositorio
-2. Abrir la terminal en la carpeta del proyecto
-3. Ejecutar el archivo principal
+- El sistema calcula automáticamente el **costo total** del producto registrado.
+
+# Requisitos
+- Tener instalado **Python 3** en el computador.
+- Contar con una terminal o consola (CMD, PowerShell, Linux Terminal o VS Code).
+- Tener descargados los archivos del proyecto.
+
+# Cómo ejecutar el programa
+1. Descargar o clonar el repositorio del proyecto.
+2. Abrir la terminal dentro de la carpeta donde se encuentra el proyecto.
+3. Ejecutar el archivo principal con el siguiente comando:
+
+```bash
+python app.py
