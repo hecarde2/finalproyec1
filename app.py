@@ -4,11 +4,12 @@ from archivos import guardar_csv, cargar_csv
 print("\nBIENVENIDO/A AL SISTEMA DE INVENTARIO")
 
 inventario = []
+option = 0
 
 # -------------------------------------------------
 # MENÚ PRINCIPAL
 # -------------------------------------------------
-while True:
+while option != 9:
 
     mostrar_menu()
 
