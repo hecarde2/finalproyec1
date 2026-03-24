@@ -29,10 +29,7 @@ while True:
     # 1. AGREGAR PRODUCTO
     # -------------------------------------------------
     if option == 1:
-        try:
-            agregar_producto(inventario)
-        except Exception as e:
-            print("Error al agregar producto:", e)
+        agregar_producto(inventario)
 
 
     # -------------------------------------------------
@@ -46,40 +43,21 @@ while True:
     # 3. BUSCAR PRODUCTO
     # -------------------------------------------------
     elif option == 3:
-        nombre = input("Nombre del producto: ")
-        producto = buscar_producto(inventario, nombre)
-
-        if producto:
-            print("Producto encontrado:", producto)
-        else:
-            print("Producto no encontrado.")
+        buscar_producto(inventario)
 
 
     # -------------------------------------------------
     # 4. ACTUALIZAR PRODUCTO
     # -------------------------------------------------
     elif option == 4:
-        nombre = input("Producto a actualizar: ")
-
-        try:
-            precio = float(input("Nuevo precio: "))
-            cantidad = int(input("Nueva cantidad: "))
-
-            if precio < 0 or cantidad < 0:
-                print("Los valores no pueden ser negativos.")
-            else:
-                actualizar_producto(inventario, nombre, precio, cantidad)
-
-        except ValueError:
-            print("Datos inválidos.")
+        actualizar_producto(inventario)
 
 
     # -------------------------------------------------
     # 5. ELIMINAR PRODUCTO
     # -------------------------------------------------
     elif option == 5:
-        nombre = input("Producto a eliminar: ")
-        eliminar_producto(inventario, nombre)
+        eliminar_producto(inventario)
 
 
     # -------------------------------------------------
@@ -111,5 +89,3 @@ while True:
     elif option == 9:
         print("HASTA PRONTO")
         break
-
-

@@ -9,12 +9,11 @@ def agregar_producto(inventario):
         precio = float(input("Precio: "))
         cantidad = int(input("Cantidad: "))
     except ValueError:
-        print("Debe ingresar números válidos")
+        print("Datos inválidos")
         return
 
-    # Validaciones
     if precio < 0 or cantidad < 0:
-        print("Número inválido")
+        print("Valores negativos no permitidos")
         return
 
     producto = {
@@ -24,11 +23,11 @@ def agregar_producto(inventario):
     }
 
     inventario.append(producto)
-    print("Producto agregado con éxito")
+    print("Producto agregado correctamente")
 
 
 # -------------------------------------------------
-# MENÚ
+# MENU
 # -------------------------------------------------
 def mostrar_menu():
     print("\n========= MENÚ INVENTARIO =========")
@@ -53,12 +52,8 @@ def mostrar_inventario(inventario):
         return
 
     print("\nINVENTARIO")
-    for producto in inventario:
-        print(
-            f"Nombre: {producto['nombre']} | "
-            f"Precio: {producto['precio']} | "
-            f"Cantidad: {producto['cantidad']}"
-        )
+    for p in inventario:
+        print(f"{p['nombre']} | {p['precio']} | {p['cantidad']}")
 
 
 # -------------------------------------------------
@@ -68,14 +63,13 @@ def buscar_producto(inventario):
 
     nombre = input("Nombre a buscar: ").strip()
 
-    for producto in inventario:
-        if producto["nombre"].lower() == nombre.lower():
+    for p in inventario:
+        if p["nombre"].lower() == nombre.lower():
             print("Producto encontrado:")
-            print(producto)
-            return producto
+            print(p)
+            return
 
     print("Producto no encontrado")
-    return None
 
 
 # -------------------------------------------------
@@ -85,8 +79,8 @@ def actualizar_producto(inventario):
 
     nombre = input("Producto a actualizar: ").strip()
 
-    for actual in inventario:
-        if actual["nombre"].lower() == nombre.lower():
+    for p in inventario:
+        if p["nombre"].lower() == nombre.lower():
 
             try:
                 precio = float(input("Nuevo precio: "))
@@ -96,11 +90,11 @@ def actualizar_producto(inventario):
                 return
 
             if precio < 0 or cantidad < 0:
-                print("Número inválido")
+                print("Valores negativos no permitidos")
                 return
 
-            actual["precio"] = precio
-            actual["cantidad"] = cantidad
+            p["precio"] = precio
+            p["cantidad"] = cantidad
 
             print("Producto actualizado")
             return
@@ -115,9 +109,9 @@ def eliminar_producto(inventario):
 
     nombre = input("Producto a eliminar: ").strip()
 
-    for producto in inventario:
-        if producto["nombre"].lower() == nombre.lower():
-            inventario.remove(producto)
+    for p in inventario:
+        if p["nombre"].lower() == nombre.lower():
+            inventario.remove(p)
             print("Producto eliminado")
             return
 
@@ -125,7 +119,7 @@ def eliminar_producto(inventario):
 
 
 # -------------------------------------------------
-# CALCULAR ESTADÍSTICAS
+# ESTADISTICAS
 # -------------------------------------------------
 def calcular_estadisticas(inventario):
 
@@ -133,18 +127,14 @@ def calcular_estadisticas(inventario):
         print("Inventario vacío")
         return
 
-    unidades_totales = 0
-    valor_total = 0
-
-    for producto in inventario:
-        unidades_totales += producto["cantidad"]
-        valor_total += producto["precio"] * producto["cantidad"]
+    unidades = sum(p["cantidad"] for p in inventario)
+    valor = sum(p["precio"] * p["cantidad"] for p in inventario)
 
     mas_caro = max(inventario, key=lambda x: x["precio"])
     mayor_stock = max(inventario, key=lambda x: x["cantidad"])
 
     print("\nESTADÍSTICAS")
-    print("Unidades totales:", unidades_totales)
-    print("Valor total:", valor_total)
-    print("Producto más caro:", mas_caro["nombre"], "-", mas_caro["precio"])
-    print("Mayor stock:", mayor_stock["nombre"], "-", mayor_stock["cantidad"])
+    print("Unidades totales:", unidades)
+    print("Valor total:", valor)
+    print("Producto más caro:", mas_caro["nombre"])
+    print("Mayor stock:", mayor_stock["nombre"])
