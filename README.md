@@ -58,7 +58,7 @@ El sistema está dividido en varios archivos:
 
 1. Descargar o clonar el repositorio.
 2. Abrir la terminal en la carpeta del proyecto.
-3. 3. Cambiar la rama de main a  feature/1-app
+3. Cambiar la rama de main a  feature/1-app
 4. Ejecutar el archivo principal con el siguiente comando:
 
 ```bash
