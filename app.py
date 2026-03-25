@@ -13,7 +13,7 @@ while option != 9:
 
     mostrar_menu()
 
-    # SI HAY ALGÚN ERROR DE UN NÚMERO FUERA DE RANGO, SE REPITA EL MENÚ Y EL PROGRAMA SIGA
+    # SI HAY ALGÚN ERROR DE UN NÚMERO FUERA DE RANGO, SE REPITA EL MENÚ, EL USUARIO COLOQUE UNA OPCION VALIDA Y EL PROGRAMA SIGA
     try:
         option = int(input("Ingrese una opción (1-9): "))
 
