@@ -1,5 +1,4 @@
 # finalproyec1
-# finalproyec1
 # Inventario-de-productos
 # Coder: 
 - Hector Carvajal
