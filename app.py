@@ -6,14 +6,11 @@ print("\nBIENVENIDO/A AL SISTEMA DE INVENTARIO")
 inventario = []
 option = 0
 
-
-# MENÚ PRINCIPAL, OPCION 9 PARA SALIR
-
+# MENÚ PRINCIPAL
 while option != 9:
 
     mostrar_menu()
 
-    # SI HAY ALGÚN ERROR DE UN NÚMERO FUERA DE RANGO, SE REPITA EL MENÚ, EL USUARIO COLOQUE UNA OPCION VALIDA Y EL PROGRAMA SIGA
     try:
         option = int(input("Ingrese una opción (1-9): "))
 
@@ -26,49 +23,48 @@ while option != 9:
         continue
 
 
-    # FUNCIONES DEFINIDAS CON LAS OPCIONES DEL MENÚ 
-
+    # OPCIONES DEL MENÚ
     if option == 1:
         agregar_producto(inventario)
 
-
-    
     elif option == 2:
         mostrar_inventario(inventario)
 
-
-   
     elif option == 3:
         buscar_producto(inventario)
 
-
-   
     elif option == 4:
         actualizar_producto(inventario)
-
 
     elif option == 5:
         eliminar_producto(inventario)
 
-
     elif option == 6:
         calcular_estadisticas(inventario)
 
-
-    #  GUARDAR CSV
-
+       # GUARDAR CSV
     elif option == 7:
-        ruta = input("Nombre del archivo (ej: inventario.csv): ")
+        ruta = input("Nombre del archivo .CSV: ")
+
+        partes = ruta.split(".")
+        #NO PERMITE GUARDAR ARCHIVO QUE NO SEA CSV
+        if partes[-1] != "csv":
+            print("Archivo con formato invalido, formato permitido .CSV")
+            continue
+
         guardar_csv(inventario, ruta)
 
-
-    #  CARGAR CSV
-
+    # CARGAR CSV
     elif option == 8:
         ruta = input("Archivo a cargar: ")
+
+        partes = ruta.split(".")
+
+        if partes[-1] != "csv":
+            print("Archivo con formato invalido, formato permitido .CSV")
+            continue
+
         inventario = cargar_csv(ruta, inventario)
-
-
 
 
     elif option == 9:
