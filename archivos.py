@@ -1,18 +1,20 @@
 # GUARDAR INVENTARIO EN CSV
-# -------------------------------------------------
+
 
 def guardar_csv(inventario, ruta, incluir_header=True):
 
-    # Validar inventario vacío
+    # MIRAMOS SI EL INVENTARIO ESTA VACIO 
     if not inventario:
         print(" No hay productos para guardar.")
         return
-
+    
+    #PREVENCIÓN DE ERRORES 
+    
     try:
-        # Abrir archivo en modo escritura
+        # ABRIR ARCHIVO EN ESCRITURA
         with open(ruta, "w", encoding="utf-8") as archivo:
 
-            # Encabezado
+            # ENCABEZADO
             if incluir_header:
                 archivo.write("nombre,precio,cantidad\n")
 
@@ -39,18 +41,18 @@ def cargar_csv(ruta, inventario_actual):
 
             lineas = archivo.readlines()
 
-            # -------- Validar encabezado ----------
+            # VALIDACIÓN DEL ENCABEZADO
             encabezado = lineas[0].strip()
             if encabezado != "nombre,precio,cantidad":
                 print(" Encabezado inválido.")
                 return inventario_actual
 
-            # -------- Leer filas ----------
+            # RECORRE Y LEE LAS LINEAS
             for linea in lineas[1:]:
 
                 datos = linea.strip().split(",")
 
-                # validar columnas
+                # VALIDA LAS COLUMNAS
                 if len(datos) != 3:
                     filas_invalidas += 1
                     continue
@@ -60,7 +62,7 @@ def cargar_csv(ruta, inventario_actual):
                     precio = float(datos[1])
                     cantidad = int(datos[2])
 
-                    # validar negativos
+                    # VALIDACIÓN DE NEGATIVOS 
                     if precio < 0 or cantidad < 0:
                         filas_invalidas += 1
                         continue
@@ -76,19 +78,18 @@ def cargar_csv(ruta, inventario_actual):
                 except ValueError:
                     filas_invalidas += 1
 
-        # -------- Preguntar acción ----------
+        # USUARIO ESCOGE SI SOBRESCRIBIR
         opcion = input("¿Sobrescribir inventario actual? (S/N): ").upper()
 
-        # =================================================
-        # REEMPLAZAR INVENTARIO
-        # =================================================
+        
+        # REEMPLAZAR INVENTARIO SI OPCION = S
+        
         if opcion == "S":
             inventario_actual = productos_cargados
             accion = "Reemplazo total"
 
-        # =================================================
         # FUSIONAR INVENTARIO
-        # =================================================
+   
         else:
             accion = "Fusión"
 
@@ -110,7 +111,7 @@ def cargar_csv(ruta, inventario_actual):
                 if not encontrado:
                     inventario_actual.append(nuevo)
 
-        # -------- Resumen ----------
+       
         print("\n Carga finalizada")
         print("Productos cargados:", len(productos_cargados))
         print("Filas inválidas omitidas:", filas_invalidas)
@@ -118,7 +119,7 @@ def cargar_csv(ruta, inventario_actual):
 
         return inventario_actual
 
-    # -------- Manejo de errores ----------
+    # MENSAJE DE ERRORES
     except FileNotFoundError:
         print(" Archivo no encontrado.")
         return inventario_actual
