@@ -1,6 +1,4 @@
-# -------------------------------------------------
-# AGREGAR PRODUCTO
-# -------------------------------------------------
+#FUNCIONES AGREGAR PRODUCTO
 def agregar_producto(inventario):
 
     nombre = input("Nombre del producto: ").strip()
@@ -26,9 +24,9 @@ def agregar_producto(inventario):
     print("Producto agregado correctamente")
 
 
-# -------------------------------------------------
-# MENU
-# -------------------------------------------------
+
+# MENU DE USUARIO
+
 def mostrar_menu():
     print("\n========= MENÚ INVENTARIO =========")
     print("1. Agregar producto")
@@ -42,9 +40,9 @@ def mostrar_menu():
     print("9. Salir")
 
 
-# -------------------------------------------------
-# MOSTRAR INVENTARIO
-# -------------------------------------------------
+ 
+# MOSTRAR INVENTARIO AL USUARIO
+
 def mostrar_inventario(inventario):
 
     if not inventario:
@@ -56,9 +54,9 @@ def mostrar_inventario(inventario):
         print(f"{p['nombre']} | {p['precio']} | {p['cantidad']}")
 
 
-# -------------------------------------------------
-# BUSCAR PRODUCTO
-# -------------------------------------------------
+
+# BUSCAR PRODUCTO POR EL NOMBRE DEL PRODUCTO
+
 def buscar_producto(inventario):
 
     nombre = input("Nombre a buscar: ").strip()
@@ -72,9 +70,9 @@ def buscar_producto(inventario):
     print("Producto no encontrado")
 
 
-# -------------------------------------------------
-# ACTUALIZAR PRODUCTO
-# -------------------------------------------------
+
+# ACTUALIZAR PRODUCTO NUEVO PRECIO Y CANTIDAD
+
 def actualizar_producto(inventario):
 
     nombre = input("Producto a actualizar: ").strip()
@@ -102,9 +100,9 @@ def actualizar_producto(inventario):
     print("Producto no encontrado")
 
 
-# -------------------------------------------------
-# ELIMINAR PRODUCTO
-# -------------------------------------------------
+
+# ELIMINAR PRODUCTO DEL INVENTARIO
+
 def eliminar_producto(inventario):
 
     nombre = input("Producto a eliminar: ").strip()
@@ -118,9 +116,9 @@ def eliminar_producto(inventario):
     print("Producto no encontrado")
 
 
-# -------------------------------------------------
-# ESTADISTICAS
-# -------------------------------------------------
+
+# ESTADISTICAS (OPERA Y MUESTRA AL USUARIO)
+
 def calcular_estadisticas(inventario):
 
     if not inventario:
